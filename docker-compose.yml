@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: rentalapp-postgres
+    environment:
+      POSTGRES_USER: rentaluser
+      POSTGRES_PASSWORD: rentalpassword
+      POSTGRES_DB: rentaldb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
